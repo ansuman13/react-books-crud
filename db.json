@@ -1,28 +1,12 @@
 {
   "books": [
     {
-      "title": "test2",
+      "title": "1",
+      "id": 1
+    },
+    {
+      "title": "ryan",
       "id": 2
-    },
-    {
-      "title": "test3",
-      "id": 3
-    },
-    {
-      "title": "test4",
-      "id": 4
-    },
-    {
-      "title": "test5",
-      "id": 5
-    },
-    {
-      "title": "test6",
-      "id": 6
-    },
-    {
-      "title": "the great gatsby",
-      "id": 7
     }
   ]
 }

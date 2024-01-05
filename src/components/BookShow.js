@@ -1,7 +1,11 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import BookEdit from "./BookEdit"
+import BooksContext from "../contexts/Books"
 
-function  BookShow({book, editBook, deleteBook}){
+function  BookShow({book}){
+    
+    const {deleteBook, updateBook}  = useContext(BooksContext)
+
     const [showEdit, setShowEdit] = useState(false)
 
     const handleClick = () => {
@@ -12,8 +16,8 @@ function  BookShow({book, editBook, deleteBook}){
         setShowEdit(!showEdit)
     }
 
-    const updateBook = (id, title) => {
-        editBook(id, title)
+    const updateBookShow = (id, title) => {
+        updateBook(id, title)
         setShowEdit(false)
     }
 
@@ -24,9 +28,7 @@ function  BookShow({book, editBook, deleteBook}){
             <button className="delete" onClick={handleClick}>Delete</button>
             <button className="update" onClick={handleUpdateClick}>Update</button>
         </div>
-        { showEdit ? <BookEdit 
-        book={book} 
-        updateBook={updateBook} />: <></>}
+        { showEdit && <BookEdit book={book} updateBook={updateBookShow}/> }
     </div>
 }
 export default BookShow 
